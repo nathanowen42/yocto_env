@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="github"
+           fetch="http://github.com" />
+
+  <remote  name="yocto"
+           fetch="http://git.yoctoproject.org" />
+
+  <remote  name="openembedded"
+           fetch="git://git.openembedded.org/" />
+
+  <default revision="master"/>
+
+ <project name="git/poky" remote="yocto" revision="zeus" path="." />
+ <project name="meta-openembedded" remote="openembedded" revision="sumo" path="meta-openembedded" />
+
+ <project name="madscientist42/meta-runit" remote="github" path="meta-runit" />
+
+ <project name="git/meta-raspberrypi" remote="yocto" revision="sumo" path="meta-raspberrypi" />
+
+</manifest>
