@@ -19,6 +19,8 @@
 
  <project name="git/meta-raspberrypi" remote="yocto" revision="zeus" path="meta-raspberrypi" />
 
+ <project name="kraj/meta-clang" remote="github" path="meta-clang" />
+
  <project name="L4B-Software/meta-docker" remote="github" path="meta-docker" />
 
 </manifest>
