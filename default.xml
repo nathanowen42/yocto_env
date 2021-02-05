@@ -12,12 +12,12 @@
 
   <default revision="master"/>
 
- <project name="git/poky" remote="yocto" revision="zeus" path="." />
- <project name="meta-openembedded" remote="openembedded" revision="zeus" path="meta-openembedded" />
+ <project name="git/poky" remote="yocto" revision="gatesgarth" path="." />
+ <project name="meta-openembedded" remote="openembedded" revision="gatesgarth" path="meta-openembedded" />
 
  <project name="madscientist42/meta-runit" remote="github" path="meta-runit" />
 
- <project name="git/meta-raspberrypi" remote="yocto" revision="zeus" path="meta-raspberrypi" />
+ <project name="git/meta-raspberrypi" remote="yocto" revision="gatesgarth" path="meta-raspberrypi" />
 
  <project name="kraj/meta-clang" remote="github" path="meta-clang" />
 
