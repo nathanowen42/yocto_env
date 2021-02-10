@@ -9,7 +9,7 @@ SUPPORTED_DISTRO_FILE=./yocto/meta-poky/conf/distro/poky.conf
 if [ ! -f  "./yocto" ] ; then
     REPO_PATH="$(pwd)/repo"
     curl https://storage.googleapis.com/git-repo-downloads/repo > ${REPO_PATH}
-    chmod a+rx "{${REPO_PATH}"
+    chmod a+rx "${REPO_PATH}"
     mkdir -p yocto
     cd yocto
     REPO=$(git config --get remote.origin.url)
