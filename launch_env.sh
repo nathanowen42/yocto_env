@@ -33,8 +33,8 @@ PREFERED_DISTRO_CLEANUP_INSTALL_METHOD="dnf clean all"
 
 YOCTO_INSTALL_PATH="$(cd yocto && pwd)"
 
-INSTALL_LIST="cpio hostname rpcgen gawk make wget tar bzip2 gzip python unzip perl patch \
-     diffutils diffstat git cpp gcc gcc-c++ glibc-devel texinfo chrpath \
+INSTALL_LIST="bash cpio hostname rpcgen gawk make wget tar xz bzip2 gzip python unzip perl patch \
+     diffutils diffstat git cpp gcc gcc-c++ glibc-locale-source glibc-langpack-en glibc-devel texinfo chrpath \
      ccache perl-Data-Dumper perl-Text-ParseWords perl-Thread-Queue socat \
      findutils which SDL-devel xterm"
 
@@ -55,6 +55,9 @@ RUN ${PREFERED_DISTRO_CLEANUP_INSTALL_METHOD}
 RUN rm /bin/sh && ln -s bash /bin/sh
 RUN groupadd -g 1000 build && useradd -u 1000 -g 1000 -ms /bin/bash build && usermod -a -G wheel build && usermod -a -G users build
 RUN curl -o /usr/local/bin/repo https://storage.googleapis.com/git-repo-downloads/repo && chmod a+x /usr/local/bin/repo
+RUN localedef -v -c -i en_US -f UTF-8 en_US.UTF-8 || true
 EOT
 
-docker run --rm -it -v `pwd`/yocto:`pwd`/yocto -w `pwd`/yocto --rm --name yocto-env --user=build "${DOCKER_TAG}"
+if [ $? == 0 ] ; then
+    docker run --rm -it -v `pwd`/yocto:`pwd`/yocto -w `pwd`/yocto --rm --name yocto-env --user=build "${DOCKER_TAG}"
+fi
