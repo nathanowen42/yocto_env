@@ -14,8 +14,8 @@ if [ ! -f  "./yocto" ] ; then
     cd yocto
     REPO=$(git config --get remote.origin.url)
     if [ ! -z "${REPO}" ] ; then
-        repo init -u "${REPO}"
-        repo sync
+        ${REPO_PATH} init -u "${REPO}"
+        ${REPO_PATH} sync
     fi
     rm -f "${REPO_PATH}"
     cd ${WORKING_DIR}
