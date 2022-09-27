@@ -36,7 +36,7 @@ YOCTO_INSTALL_PATH="$(cd yocto && pwd)"
 INSTALL_LIST="bash cpio hostname rpcgen gawk make wget tar xz bzip2 gzip python unzip perl patch \
      diffutils diffstat git cpp gcc gcc-c++ glibc-locale-source glibc-langpack-en glibc-devel texinfo chrpath \
      ccache perl-Data-Dumper perl-Text-ParseWords perl-Thread-Queue socat \
-     findutils which SDL-devel xterm"
+     findutils which SDL-devel xterm lz4 zstd"
 
 LATEST_DISTRO_VERSION="$(cat "${SUPPORTED_DISTRO_FILE}" | grep -zo SANITY_TESTED_DISTROS[^\"]*\"[^\"]*\" | tr -d '\000' | sed -nr 's/.*fedora-([0-9][0-9]).*/\1/p' | sort | tail -1)"
 
